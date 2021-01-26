@@ -3,67 +3,34 @@
     <h1>{{ msg }}</h1>
     <div class="form-group">
       <label for="number">Number Only </label>
-      <input v-model="myNumber" v-digitsonly type="text" name="number" class="mx-3">
+      <input v-model="myNumber" v-digitsonly type="text" name="number" class="mx-3 form_number">
     </div>
 
     <div class="form-group pt-3">
       <label for="text">Text Only </label>
-      <input v-model="myText" v-Alphabet type="text" name="text" class="mx-3">
+      <input v-model="myText" v-Alphabet type="text" name="text" class="mx-3 form_text">
     </div>
   </div>
 </template>
 
 <script>
+  import {
+    mixinValidate
+  } from '../Directive/mixins'
+
   export default {
+    mixins: [mixinValidate],
     name: 'HelloWorld',
     data() {
       return {
         myNumber: null,
-        myText:'',
+        myText: '',
       }
     },
     props: {
       msg: String,
     },
-    directives: {
-      digitsonly(el, binding) {
-        el.addEventListener('keypress', (e) => {
-          const key = e.key;
-          if(!/\d/.test(key)){
-            console.log("only number")
-             e.preventDefault();
-          }
-        })
 
-        el.addEventListener('change', (e) => {
-          const initialValue = el.value;
-          console.log(initialValue)
-          el.value = initialValue.replace(/[^0-9]*/g, '');
-          if (initialValue !== el.value) {
-            e.stopPropagation()
-          }
-        })
-
-      },
-
-      Alphabet(el, binding) {
-        el.addEventListener('keypress', (e) => {
-            const key = e.key;
-            if(!/[A-Za-z]/.test(key)){
-              console.log("only string")
-              e.preventDefault();
-            }
-          }),
-          el.addEventListener('change', (e) => {
-            const initialValue = el.value;
-            el.value = initialValue.replace(/[^A-Za-z ]*/g, '');
-            if (initialValue !== el.value) {
-              e.stopPropagation()
-              console.log("string")
-            }
-          })
-      },
-    }
   };
 
 </script>
@@ -86,6 +53,11 @@
 
   a {
     color: #42b983;
+  }
+
+  .form_text:focus,
+  .form_number:focus {
+    outline: 1px solid red;
   }
 
 </style>
