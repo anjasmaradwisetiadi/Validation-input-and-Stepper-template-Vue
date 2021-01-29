@@ -10,6 +10,21 @@
       <label for="text">Text Only </label>
       <input v-model="myText" v-Alphabet type="text" name="text" class="mx-3 form_text">
     </div>
+
+    <div class="form-group pt-3">
+      <label for="text">AlphaNumeric </label>
+      <input v-model="myText" v-AlphaNumeric type="text" name="text" class="mx-3 form_text">
+    </div>
+
+    <div class="form-group pt-3">
+      <label for="text">Email </label>
+      <input v-model="myText" v-AlphaNumeric type="text" name="text" class="mx-3 form_text">
+    </div>
+
+    <div class="form-group pt-3">
+      <label for="text">Password </label>
+      <input v-model="myText" v-AlphaNumeric type="text" name="text" class="mx-3 form_text">
+    </div>
   </div>
 </template>
 
