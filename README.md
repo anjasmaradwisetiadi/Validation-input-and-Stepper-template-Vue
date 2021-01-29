@@ -1,4 +1,11 @@
-# boilerplate-vue-bootstrap
+# hand craft validation form input and stepper template
+```
+1.  input number only
+2.  input text only
+3.  input alphanumeric
+4.  input email
+5.  input email
+```
 
 ## Project setup
 ```
