@@ -5,7 +5,7 @@ form input validation :
 2.  input text only
 3.  input alphanumeric
 4.  input email
-5.  input email
+5.  input password
 ```
 make stepper component use Dynamic Component
 
