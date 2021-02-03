@@ -6,6 +6,7 @@ import App from './App.vue';
 import {digitOnly} from './Directive/Validation/digitOnly'
 import {textOnly} from './Directive/Validation/textOnly';
 import {alphanumericOnly} from './Directive/Validation/alphanumericOnly';
+import {emailOnly} from './Directive/Validation/emailOnly';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -16,7 +17,8 @@ Vue.use(IconsPlugin);
 
 Vue.directive('digitsonly',digitOnly);
 Vue.directive('textonly',textOnly);
-Vue.directive('alphanumericOnly',alphanumericOnly);
+Vue.directive('alphanumericonly',alphanumericOnly);
+Vue.directive('emailonly',emailOnly);
 
 
 Vue.config.productionTip = false;
