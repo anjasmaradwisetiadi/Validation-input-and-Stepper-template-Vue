@@ -5,11 +5,62 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    error: '',
+    pageForm: {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    },
+    containResult: 
+    {
+      one: '',
+      two: {
+        email: '',
+        phone: ''
+      },
+      three:''
+    },
+    resultAll: ''
   },
+
   mutations: {
+    collectOne(state, payload) {
+      // state.pageForm.name = payload;
+      let dataOne = {
+        name: payload
+      }
+      state.containResult.one = dataOne;
+    },
+
+    collectTwo(state, payload) {
+      console.log(payload)
+      state.pageForm.email = payload.email;
+      state.pageForm.phone = payload.phone;
+      let dataTwo = {
+        email: state.pageForm.email,
+        phone: state.pageForm.phone
+      }
+      state.containResult.two = dataTwo;
+      // const data=state.containResult;
+      // state.resultAll.push(data)
+    },
+
+    collectThree(state, payload){
+      let dataThree = {
+        message: payload
+      }
+      state.containResult.three = dataThree;
+    },
+
+    finally(state) {
+      state.resultAll=state.containResult
+    }
   },
-  actions: {
+  getters: {
+    getResultAll(state) {
+      return JSON.stringify(state.resultAll, undefined, 4);
+    }
   },
-  modules: {
-  },
+  modules: {},
 });
