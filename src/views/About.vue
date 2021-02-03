@@ -44,27 +44,29 @@
       }
     },
 
-    methods: {
-      nextSteps() {
-        this.stepByStep++;
-        this.logicStepper();
-      },
-      prevSteps() {
-        this.stepByStep--;
-        this.logicStepper();
-      },
-      Submit() {
-        this.stepByStep++;
-        this.logicStepper();
-        this.$store.commit('finally');
-      },
+    computed: {
       logicStepper() {
         if (this.stepByStep === 1) return this.selectedStepper = 'one';
         else if (this.stepByStep === 2) return this.selectedStepper = 'two';
         else if (this.stepByStep === 3) return this.selectedStepper = 'three';
         else return this.selectedStepper = 'finally';
-
       }
+    },
+
+    methods: {
+      nextSteps() {
+        this.stepByStep++;
+        this.logicStepper;
+      },
+      prevSteps() {
+        this.stepByStep--;
+        this.logicStepper;
+      },
+      Submit() {
+        this.stepByStep++;
+        this.logicStepper;
+        this.$store.commit('finally');
+      },
     }
   }
 

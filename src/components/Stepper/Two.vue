@@ -29,7 +29,8 @@
         },
         set(value) {
           this.$store.commit('collectTwo', {
-            email: value
+            email: value,
+            phone: this.$store.state.pageForm.phone
           })
         }
       },
@@ -39,11 +40,15 @@
         },
         set(value) {
           this.$store.commit('collectTwo', {
+            email:this.$store.state.pageForm.email,
             phone: value
           })
         }
-      }
-    }
+      },
+      
+    },
+
+
 
   }
 

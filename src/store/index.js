@@ -41,8 +41,6 @@ export default new Vuex.Store({
         phone: state.pageForm.phone
       }
       state.containResult.two = dataTwo;
-      // const data=state.containResult;
-      // state.resultAll.push(data)
     },
 
     collectThree(state, payload){
