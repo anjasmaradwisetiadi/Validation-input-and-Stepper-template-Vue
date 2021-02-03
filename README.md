@@ -7,6 +7,8 @@ form input validation :
 4.  input email
 5.  input email
 ```
+make stepper component use Dynamic Component
+
 
 ## Project setup
 ```
