@@ -26,7 +26,6 @@ export default new Vuex.Store({
 
   mutations: {
     collectOne(state, payload) {
-      // state.pageForm.name = payload;
       let dataOne = {
         name: payload
       }
@@ -35,7 +34,6 @@ export default new Vuex.Store({
 
     // payload bisa menampung email dan phone
     collectTwo(state, payload) {
-      console.log(payload)
       state.pageForm.email = payload.email;
       state.pageForm.phone = payload.phone;
       let dataTwo = {

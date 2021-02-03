@@ -18,12 +18,10 @@
     data() {
       return {
         error: '',
-        emails: '',
-        phones: ''
       }
     },
 
-    // Tanya... ini bisa gak email dan phone di tampung di payload secara bersamaan
+    // Tanya... ini bisa gak email dan phone di tampung di payload secara
     computed: {
       email: {
         get() {
