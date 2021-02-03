@@ -22,6 +22,8 @@
         phones: ''
       }
     },
+
+    // Tanya... ini bisa gak email dan phone di tampung di payload secara bersamaan
     computed: {
       email: {
         get() {

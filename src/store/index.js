@@ -33,6 +33,7 @@ export default new Vuex.Store({
       state.containResult.one = dataOne;
     },
 
+    // payload bisa menampung email dan phone
     collectTwo(state, payload) {
       console.log(payload)
       state.pageForm.email = payload.email;

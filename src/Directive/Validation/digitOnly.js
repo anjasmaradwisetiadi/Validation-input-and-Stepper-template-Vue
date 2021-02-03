@@ -16,11 +16,10 @@ export const digitOnly={
           el.addEventListener('change', (e) => {
             const initialValue = el.value;
             console.log(initialValue)
-            el.value = initialValue.replace(/[^0-9]*/g, '');
+            el.value = initialValue.replace(!/\d/g, '');
             if (initialValue !== el.value) {
               e.stopPropagation()
             }
           })
-  
-      },
+    },
 }
