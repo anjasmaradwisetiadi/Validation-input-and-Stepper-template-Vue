@@ -8,7 +8,7 @@
 
     <div class="form-group pt-3">
       <label for="text">Text Only </label>
-      <input v-model="myText" v-Alphabet type="text" name="text" class="mx-3 form_text">
+      <input v-model="myText" v-textonly type="text" name="text" class="mx-3 form_text">
     </div>
 <!-- 
     <div class="form-group pt-3">
