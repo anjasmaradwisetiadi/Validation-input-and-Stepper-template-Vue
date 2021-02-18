@@ -13,7 +13,7 @@
       <div class="col">
         <span> <strong>After :</strong> </span>
 
-        <pre class="text-left">
+        <pre class="text-left" id="json">
             {{dataAfter}}
         </pre>
       </div>
@@ -30,8 +30,9 @@
     data() {
       return {
         dataBefore: '',
-        containArray:[],
+        containArray: [],
         dataAfter: '',
+        limit: 0,
       }
     },
 
@@ -42,11 +43,20 @@
     },
     methods: {
       reduce() {
-        dataSiswa.forEach((Element) => {
+         this.limit++;
+        if (this.limit < 2) {
+          this.iteration(dataSiswa)
+        } else {
+          return false
+        }
+      },
+
+      iteration(item) {
+        item.forEach((Element) => {
           delete Element.no_telp;
           delete Element.tanggal_lahir;
           this.containArray.push(Element)
-          this.dataAfter=JSON.stringify(this.containArray,undefined,2);
+          this.dataAfter = JSON.stringify(this.containArray, undefined, 2);
         })
       }
     }
