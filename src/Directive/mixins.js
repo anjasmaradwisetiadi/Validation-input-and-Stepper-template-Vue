@@ -1,6 +1,6 @@
 
 export const mixinValidate = {
   mounted(){
-    console.log("mixin console")
+    // console.log("mixin console")
   }
 }
