@@ -7,10 +7,14 @@
       <br>
       <input type="file" name=imgPriview accept="image/*" @change="imagePriview">
       <br>
-      <div v-if="image.imageSaved" class="my-4">
-        <img :src="image.imageSaved" alt="imageSved" style="width:260px">
-        <br>
-        <span class="text-danger">{{image.nameImage}}</span>
+      <div v-if="imageCollect" class="my-4">
+        <div v-for="(item,index) in imageCollect" :key="index">
+          <img :src="imageUrlPriview(item)" alt="imageSved" style="width:260px">
+          <br>
+          <span class="text-danger">{{item.name}}</span>
+          <br>
+        </div>
+
       </div>
       <div v-else class="my-4">
         <span>Gambar tidak ada</span>
@@ -27,17 +31,34 @@
       return {
         image: {
           imageSaved: '',
-          nameImage: ''
-        }
+          nameImage: '',
+        },
+        countImage: 1,
+        imageCollect: []
 
       }
     },
 
     methods: {
       imagePriview(event) {
-        const gambar = event.target.files[0];
-        this.image.nameImage = event.target.files[0].name
-        this.image.imageSaved = URL.createObjectURL(gambar)
+        if (event.target.files[0]) {
+          const cobaObservasi = this.countImage+1;
+          console.log("ini observasi = "+cobaObservasi)
+          for (let i = 1; i < cobaObservasi; i++) {
+            this.imageCollect.push(event.target.files[0])
+          }
+          return this.imageCollect;
+        } else {
+          return false;
+        }
+      },
+
+      imageUrlPriview(item) {
+        if (item) {
+          return URL.createObjectURL(item);
+        } else {
+          return false;
+        }
       }
     }
   }
